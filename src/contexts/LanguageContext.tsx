@@ -293,7 +293,7 @@ const zhTranslations = {
   facialContour: {
     hero: {
       title: '面部轮廓重塑',
-      subtitle: '我们根据不同人种的面部结构和骨架特征，\n结合个人审美偏好，科学地提供个性化整形解决方案。',
+      subtitle: '基于人种骨骼特征，融合个人审美，定制科学塑美方案',
       cta: '现在开始探索',
       imageAlt: '面部轮廓示例',
     },
