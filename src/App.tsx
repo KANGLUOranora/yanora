@@ -917,10 +917,10 @@ function App() {
       <section className="w-full relative bg-white">
         <div className="max-w-7xl mx-auto py-12 md:py-20 px-4">
           <div className="text-center mb-8 md:mb-16">
-            <h2 className="text-2xl md:text-3xl font-light mb-4 tracking-wide" style={{color: '#1F2937'}}>
+            <h2 className="text-xl md:text-2xl font-light mb-3 tracking-wide" style={{color: '#1F2937'}}>
               {t.analysis.title}
             </h2>
-            <p className="text-base md:text-lg font-light tracking-wide" style={{color: '#6B7280'}}>
+            <p className="text-sm md:text-base font-light tracking-wide" style={{color: '#6B7280'}}>
               {t.analysis.subtitle}
             </p>
           </div>
