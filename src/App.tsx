@@ -499,7 +499,7 @@ function App() {
         />
       )}
 
-      <section className="py-20 md:py-40 px-6 md:px-12">
+      <section className="pt-8 pb-20 md:py-40 px-6 md:px-12">
         <AnimatedSection animation="fade-up" className="max-w-5xl mx-auto text-center">
           {/* 移动端 */}
           <div className="md:hidden">
