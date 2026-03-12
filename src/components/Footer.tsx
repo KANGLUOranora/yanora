@@ -1,4 +1,4 @@
-import { Phone, Mail, FileText, Headphones } from 'lucide-react';
+import { Phone, Mail } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 function Footer() {
@@ -51,10 +51,9 @@ function Footer() {
               </a>
               <a
                 href="/after-sales"
-                className="flex items-center gap-2 text-sm font-light hover:text-white transition group"
+                className="flex items-center gap-2 text-sm font-light hover:text-white transition"
                 style={{color: '#A0A7B5'}}
               >
-                <Headphones className="w-4 h-4 group-hover:scale-110 transition" />
                 <span>{t('footer.afterSales')}</span>
               </a>
               <a
@@ -72,10 +71,9 @@ function Footer() {
             <div className="space-y-3">
               <a
                 href="/privacy-policy"
-                className="flex items-center gap-2 text-sm font-light hover:text-white transition group"
+                className="flex items-center gap-2 text-sm font-light hover:text-white transition"
                 style={{color: '#A0A7B5'}}
               >
-                <FileText className="w-4 h-4 group-hover:scale-110 transition" />
                 <span>{t('footer.privacy')}</span>
               </a>
               <a
