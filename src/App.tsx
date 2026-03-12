@@ -499,41 +499,48 @@ function App() {
         />
       )}
 
-      <section className="py-16 md:py-32 px-6 md:px-12">
-        <AnimatedSection animation="fade-up" className="max-w-4xl mx-auto text-center">
-          {/* 移动端：三行显示 */}
+      <section className="py-20 md:py-40 px-6 md:px-12">
+        <AnimatedSection animation="fade-up" className="max-w-5xl mx-auto text-center">
+          {/* 移动端 */}
           <div className="md:hidden">
-            <div className="mb-6 space-y-2">
-              <div className="text-2xl font-medium bg-gradient-to-r from-slate-700 via-slate-800 to-slate-900 bg-clip-text text-transparent">
+            <div className="space-y-6">
+              <h1 className="text-3xl font-semibold tracking-tight" style={{color: '#1F1F1F', lineHeight: '1.2'}}>
                 {t.hero.title1}
-              </div>
-              <div className="text-base font-light leading-snug">
-                <div className="bg-gradient-to-r from-slate-600 via-slate-700 to-slate-800 bg-clip-text text-transparent">
+              </h1>
+              <div className="max-w-xs mx-auto">
+                <p className="text-sm leading-relaxed opacity-70" style={{color: '#1F1F1F'}}>
                   {t.hero.title2Mobile}
-                </div>
-                <div className="bg-gradient-to-r from-slate-600 via-slate-700 to-slate-800 bg-clip-text text-transparent">
+                  <br />
                   {t.hero.title3Mobile}
-                </div>
+                </p>
               </div>
             </div>
           </div>
-          {/* 桌面端：两行显示 */}
+          {/* 桌面端 */}
           <div className="hidden md:block">
-            <div className="mb-6 space-y-3">
-              <div className="text-5xl font-medium bg-gradient-to-r from-slate-700 via-slate-800 to-slate-900 bg-clip-text text-transparent">
+            <div className="space-y-8">
+              <h1 className="text-6xl font-semibold tracking-tight" style={{color: '#1F1F1F', lineHeight: '1.15', letterSpacing: '-0.02em'}}>
                 {t.hero.title1}
-              </div>
-              <div className="text-2xl font-light leading-relaxed tracking-wide bg-gradient-to-r from-slate-600 via-slate-700 to-slate-800 bg-clip-text text-transparent">
-                {t.hero.title2}
+              </h1>
+              <div className="max-w-2xl mx-auto">
+                <p className="text-lg leading-relaxed opacity-70" style={{color: '#1F1F1F', letterSpacing: '0.01em'}}>
+                  {t.hero.title2}
+                </p>
               </div>
             </div>
           </div>
           <button
             onClick={() => navigate('/booking')}
-            className="px-8 md:px-12 py-2.5 md:py-3 text-white text-xs md:text-sm transition tracking-wider mt-6 md:mt-8"
+            className="px-10 md:px-14 py-3 md:py-4 text-white text-sm md:text-base transition tracking-wide mt-10 md:mt-14 rounded-full font-light shadow-lg hover:shadow-xl"
             style={{backgroundColor: '#1C2B3A'}}
-            onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#101D29'}
-            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#1C2B3A'}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = '#101D29';
+              e.currentTarget.style.transform = 'translateY(-2px)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = '#1C2B3A';
+              e.currentTarget.style.transform = 'translateY(0)';
+            }}
           >
             {t.hero.cta}
           </button>
