@@ -510,12 +510,12 @@ function App() {
               </h1>
 
               {/* 副标题 */}
-              <h2 className="text-3xl font-light mb-12" style={{color: '#95A5A6', letterSpacing: '-0.01em'}}>
+              <h2 className="text-3xl font-light mb-8" style={{color: '#95A5A6', letterSpacing: '-0.01em'}}>
                 {t.hero.title1Part2}
               </h2>
 
               {/* 描述文字 */}
-              <div className="max-w-md mb-16">
+              <div className="max-w-md mb-8">
                 <p className="text-base leading-relaxed font-light" style={{color: '#5D6D7E', letterSpacing: '0.01em'}}>
                   {t.hero.title2Mobile}
                 </p>
@@ -524,19 +524,19 @@ function App() {
               {/* CTA 按钮 */}
               <button
                 onClick={() => navigate('/booking')}
-                className="w-full max-w-md py-5 text-white text-xl font-light rounded-3xl shadow-lg hover:shadow-xl transition-all flex items-center justify-between px-8"
-                style={{backgroundColor: '#2C3E50'}}
+                className="w-full max-w-md py-3 text-white text-lg font-light shadow-lg hover:shadow-xl transition-all flex items-center justify-between px-8"
+                style={{backgroundColor: '#1C2B3A'}}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = '#1a252f';
+                  e.currentTarget.style.backgroundColor = '#152230';
                   e.currentTarget.style.transform = 'translateY(-2px)';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = '#2C3E50';
+                  e.currentTarget.style.backgroundColor = '#1C2B3A';
                   e.currentTarget.style.transform = 'translateY(0)';
                 }}
               >
                 <span>{t.hero.cta}</span>
-                <span className="text-2xl">→</span>
+                <span className="text-xl">→</span>
               </button>
             </div>
           </div>
@@ -555,7 +555,7 @@ function App() {
               </h2>
 
               {/* 描述文字 */}
-              <div className="max-w-3xl mx-auto mb-20 pt-8">
+              <div className="max-w-3xl mx-auto mb-12 pt-8">
                 <p className="text-lg leading-relaxed font-light" style={{color: '#5D6D7E', letterSpacing: '0.01em'}}>
                   {t.hero.title2}
                 </p>
@@ -565,14 +565,14 @@ function App() {
               <div className="max-w-4xl mx-auto">
                 <button
                   onClick={() => navigate('/booking')}
-                  className="w-full py-6 text-white text-2xl font-light rounded-3xl shadow-lg hover:shadow-xl transition-all flex items-center justify-between px-12"
-                  style={{backgroundColor: '#2C3E50'}}
+                  className="w-full py-4 text-white text-2xl font-light shadow-lg hover:shadow-xl transition-all flex items-center justify-between px-12"
+                  style={{backgroundColor: '#1C2B3A'}}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = '#1a252f';
+                    e.currentTarget.style.backgroundColor = '#152230';
                     e.currentTarget.style.transform = 'translateY(-2px)';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = '#2C3E50';
+                    e.currentTarget.style.backgroundColor = '#1C2B3A';
                     e.currentTarget.style.transform = 'translateY(0)';
                   }}
                 >
