@@ -2,10 +2,12 @@ import { createContext, useContext, useState, ReactNode } from 'react';
 
 type Language = 'zh' | 'en';
 
+type TranslationFunction = ((key: string) => any) & Record<string, any>;
+
 interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
-  t: any;
+  t: TranslationFunction;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -23,12 +25,41 @@ interface LanguageProviderProps {
 }
 
 export const LanguageProvider = ({ children }: LanguageProviderProps) => {
-  const [language, setLanguage] = useState<Language>('en');
+  const [language, setLanguage] = useState<Language>(() => {
+    // Try to get saved language from localStorage, default to 'en'
+    const saved = localStorage.getItem('language');
+    return (saved === 'zh' || saved === 'en') ? saved : 'en';
+  });
 
-  const t = getTranslations(language);
+  const translations = getTranslations(language);
+
+  // Create a translation function that supports both function call and object property access
+  const t = new Proxy(
+    (key: string) => {
+      // Support dot notation like t('nav.home')
+      const keys = key.split('.');
+      let value: any = translations;
+      for (const k of keys) {
+        value = value?.[k];
+      }
+      return value;
+    },
+    {
+      get: (target, prop: string) => {
+        // Support object notation like t.nav.home
+        return translations[prop];
+      }
+    }
+  ) as TranslationFunction;
+
+  // Save language preference to localStorage when it changes
+  const handleSetLanguage = (lang: Language) => {
+    setLanguage(lang);
+    localStorage.setItem('language', lang);
+  };
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t }}>
+    <LanguageContext.Provider value={{ language, setLanguage: handleSetLanguage, t }}>
       {children}
     </LanguageContext.Provider>
   );
