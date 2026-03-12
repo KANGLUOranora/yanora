@@ -283,7 +283,7 @@ function BookingMobile({
                       value={formData.lastName || ''}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 bg-white border rounded-lg text-sm tracking-wide transition focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent"
+                      className="w-full px-4 py-3 bg-white border rounded-none text-sm tracking-wide transition focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent"
                       style={{borderColor: '#E5E7EB', color: '#1F1F1F'}}
                       placeholder={t('booking.lastNamePlaceholder')}
                     />
@@ -298,7 +298,7 @@ function BookingMobile({
                       value={formData.firstName || ''}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 bg-white border rounded-lg text-sm tracking-wide transition focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent"
+                      className="w-full px-4 py-3 bg-white border rounded-none text-sm tracking-wide transition focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent"
                       style={{borderColor: '#E5E7EB', color: '#1F1F1F'}}
                       placeholder={t('booking.firstNamePlaceholder')}
                     />
@@ -315,7 +315,7 @@ function BookingMobile({
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-white border rounded-lg text-sm tracking-wide transition focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent"
+                    className="w-full px-4 py-3 bg-white border rounded-none text-sm tracking-wide transition focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent"
                     style={{borderColor: '#E5E7EB', color: '#1F1F1F'}}
                     placeholder={t('booking.emailPlaceholder')}
                   />
@@ -329,7 +329,7 @@ function BookingMobile({
                     <select
                       value={countryCode}
                       onChange={handleCountryCodeChange}
-                      className="px-3 py-3 bg-white border rounded-lg text-sm tracking-wide transition focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent"
+                      className="px-3 py-3 bg-white border rounded-none text-sm tracking-wide transition focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent"
                       style={{borderColor: '#E5E7EB', color: '#1F1F1F', minWidth: '100px'}}
                     >
                       {countryCodes.map((country) => (
@@ -343,7 +343,7 @@ function BookingMobile({
                       value={phoneNumber}
                       onChange={handlePhoneChange}
                       required
-                      className="flex-1 px-4 py-3 bg-white border rounded-lg text-sm tracking-wide transition focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent"
+                      className="flex-1 px-4 py-3 bg-white border rounded-none text-sm tracking-wide transition focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent"
                       style={{borderColor: '#E5E7EB', color: '#1F1F1F'}}
                       placeholder={t('booking.phonePlaceholder')}
                     />
@@ -354,7 +354,7 @@ function BookingMobile({
                   <button
                     type="submit"
                     disabled={loading}
-                    className="w-full py-3.5 text-white text-sm font-light transition tracking-wider disabled:opacity-50 rounded-lg"
+                    className="w-full py-3.5 text-white text-sm font-light transition tracking-wider disabled:opacity-50 rounded-none"
                     style={{backgroundColor: '#1C2B3A'}}
                   >
                     {loading ? t('booking.submitting') : t('booking.submit')}
@@ -390,7 +390,7 @@ function BookingMobile({
                 <button
                   onClick={() => handlePayment('PayPal')}
                   disabled={loading}
-                  className="w-full py-3.5 border text-sm transition hover:bg-gray-50 disabled:opacity-50 rounded-lg font-normal tracking-wide"
+                  className="w-full py-3.5 border text-sm transition hover:bg-gray-50 disabled:opacity-50 rounded-none font-normal tracking-wide"
                   style={{borderColor: '#E5E7EB', color: '#1F1F1F'}}
                 >
                   {loading ? t('booking.processing') : t('booking.paypalPayment')}
@@ -399,7 +399,7 @@ function BookingMobile({
                 <button
                   onClick={() => handlePayment('银行卡')}
                   disabled={loading}
-                  className="w-full py-3.5 border text-sm transition hover:bg-gray-50 disabled:opacity-50 rounded-lg font-normal tracking-wide"
+                  className="w-full py-3.5 border text-sm transition hover:bg-gray-50 disabled:opacity-50 rounded-none font-normal tracking-wide"
                   style={{borderColor: '#E5E7EB', color: '#1F1F1F'}}
                 >
                   {loading ? t('booking.processing') : t('booking.cardPayment')}
@@ -474,7 +474,7 @@ function BookingMobile({
               </p>
               <button
                 onClick={() => navigate('/')}
-                className="px-8 py-3 text-white text-sm transition rounded-lg"
+                className="px-8 py-3 text-white text-sm transition rounded-none"
                 style={{backgroundColor: '#1C2B3A'}}
               >
                 {t('booking.backToHome')}

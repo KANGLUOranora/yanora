@@ -271,7 +271,7 @@ function BookingDesktop({
                       value={formData.lastName || ''}
                       onChange={handleChange}
                       required
-                      className="w-full px-5 py-4 border text-sm tracking-wide transition focus:outline-none focus:border-gray-900"
+                      className="w-full px-5 py-4 border text-sm tracking-wide transition focus:outline-none focus:border-gray-900 rounded-none"
                       style={{borderColor: '#D1D5DB', color: '#1F1F1F'}}
                       placeholder={t('booking.lastNamePlaceholder')}
                     />
@@ -286,7 +286,7 @@ function BookingDesktop({
                       value={formData.firstName || ''}
                       onChange={handleChange}
                       required
-                      className="w-full px-5 py-4 border text-sm tracking-wide transition focus:outline-none focus:border-gray-900"
+                      className="w-full px-5 py-4 border text-sm tracking-wide transition focus:outline-none focus:border-gray-900 rounded-none"
                       style={{borderColor: '#D1D5DB', color: '#1F1F1F'}}
                       placeholder={t('booking.firstNamePlaceholder')}
                     />
@@ -303,7 +303,7 @@ function BookingDesktop({
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-5 py-4 border text-sm tracking-wide transition focus:outline-none focus:border-gray-900"
+                    className="w-full px-5 py-4 border text-sm tracking-wide transition focus:outline-none focus:border-gray-900 rounded-none"
                     style={{borderColor: '#D1D5DB', color: '#1F1F1F'}}
                     placeholder={t('booking.emailPlaceholder')}
                   />
@@ -317,7 +317,7 @@ function BookingDesktop({
                     <select
                       value={countryCode}
                       onChange={handleCountryCodeChange}
-                      className="px-4 py-4 border text-sm tracking-wide transition focus:outline-none focus:border-gray-900"
+                      className="px-4 py-4 border text-sm tracking-wide transition focus:outline-none focus:border-gray-900 rounded-none"
                       style={{borderColor: '#D1D5DB', color: '#1F1F1F', minWidth: '150px'}}
                     >
                       {countryCodes.map((country) => (
@@ -331,7 +331,7 @@ function BookingDesktop({
                       value={phoneNumber}
                       onChange={handlePhoneChange}
                       required
-                      className="flex-1 px-5 py-4 border text-sm tracking-wide transition focus:outline-none focus:border-gray-900"
+                      className="flex-1 px-5 py-4 border text-sm tracking-wide transition focus:outline-none focus:border-gray-900 rounded-none"
                       style={{borderColor: '#D1D5DB', color: '#1F1F1F'}}
                       placeholder={t('booking.phonePlaceholder')}
                     />
@@ -342,7 +342,7 @@ function BookingDesktop({
                   <button
                     type="submit"
                     disabled={loading}
-                    className="w-full py-4 text-white text-sm font-light transition tracking-wider disabled:opacity-50"
+                    className="w-full py-4 text-white text-sm font-light transition tracking-wider disabled:opacity-50 rounded-none"
                     style={{backgroundColor: '#1C2B3A'}}
                   >
                     {loading ? t('booking.submitting') : t('booking.submit')}
@@ -393,7 +393,7 @@ function BookingDesktop({
                 <button
                   onClick={() => handlePayment('PayPal')}
                   disabled={loading}
-                  className="w-full py-4 border text-sm transition hover:bg-gray-50 disabled:opacity-50 font-normal tracking-wide"
+                  className="w-full py-4 border text-sm transition hover:bg-gray-50 disabled:opacity-50 font-normal tracking-wide rounded-none"
                   style={{borderColor: '#D1D5DB', color: '#1F1F1F'}}
                 >
                   {loading ? t('booking.processing') : t('booking.paypalPayment')}
@@ -402,7 +402,7 @@ function BookingDesktop({
                 <button
                   onClick={() => handlePayment('银行卡')}
                   disabled={loading}
-                  className="w-full py-4 border text-sm transition hover:bg-gray-50 disabled:opacity-50 font-normal tracking-wide"
+                  className="w-full py-4 border text-sm transition hover:bg-gray-50 disabled:opacity-50 font-normal tracking-wide rounded-none"
                   style={{borderColor: '#D1D5DB', color: '#1F1F1F'}}
                 >
                   {loading ? t('booking.processing') : t('booking.cardPayment')}
@@ -469,7 +469,7 @@ function BookingDesktop({
               </p>
               <button
                 onClick={() => navigate('/')}
-                className="px-8 py-3 text-white text-sm transition"
+                className="px-8 py-3 text-white text-sm transition rounded-none"
                 style={{backgroundColor: '#1C2B3A'}}
               >
                 {t('booking.backToHome')}
