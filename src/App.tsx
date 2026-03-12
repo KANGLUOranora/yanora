@@ -531,7 +531,7 @@ function App() {
           </div>
           <button
             onClick={() => navigate('/booking')}
-            className="px-10 md:px-14 py-3 md:py-4 text-white text-sm md:text-base transition tracking-wide mt-10 md:mt-14 rounded-full font-light shadow-lg hover:shadow-xl"
+            className="px-10 md:px-14 py-3 md:py-4 text-white text-sm md:text-base transition tracking-wide mt-10 md:mt-14 font-light shadow-lg hover:shadow-xl"
             style={{backgroundColor: '#1C2B3A'}}
             onMouseEnter={(e) => {
               e.currentTarget.style.backgroundColor = '#101D29';
