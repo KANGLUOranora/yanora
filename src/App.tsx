@@ -504,67 +504,87 @@ function App() {
           {/* 移动端 */}
           <div className="md:hidden">
             <div className="flex flex-col items-center px-4">
-              {/* 主标题组 */}
-              <div className="mb-6">
-                <h1 className="text-center" style={{color: '#1F1F1F', lineHeight: '1.3', letterSpacing: '-0.01em'}}>
-                  <div className="text-4xl font-light tracking-tight">{t.hero.title1}</div>
-                  <div className="text-2xl font-semibold tracking-tight whitespace-nowrap mt-1">{t.hero.title1Part2}</div>
-                </h1>
+              {/* 主标题 */}
+              <h1 className="text-6xl font-light mb-2" style={{color: '#2C3E50', letterSpacing: '-0.02em'}}>
+                {t.hero.title1}
+              </h1>
+
+              {/* 副标题 */}
+              <h2 className="text-5xl font-light mb-12" style={{color: '#95A5A6', letterSpacing: '-0.01em'}}>
+                {t.hero.title1Part2}
+              </h2>
+
+              {/* 描述文字 */}
+              <div className="max-w-md mb-16">
+                <p className="text-base leading-relaxed font-light" style={{color: '#5D6D7E', letterSpacing: '0.01em'}}>
+                  {t.hero.title2Mobile}
+                </p>
               </div>
 
-              {/* 副标题区域 - 带背景卡片效果 */}
-              <div className="max-w-sm w-full">
-                <div className="px-8 py-4 rounded-2xl" style={{
-                  background: 'linear-gradient(135deg, rgba(28, 43, 58, 0.02), rgba(28, 43, 58, 0.04))',
-                  border: '1px solid rgba(28, 43, 58, 0.08)'
-                }}>
-                  <div className="space-y-0.5">
-                    <p className="text-sm leading-tight text-center font-light" style={{color: '#1F1F1F', letterSpacing: '0.03em', opacity: 0.85}}>
-                      {t.hero.title2Mobile}
-                    </p>
-                    <p className="text-sm leading-tight text-center font-light" style={{color: '#1F1F1F', letterSpacing: '0.03em', opacity: 0.85}}>
-                      {t.hero.title3Mobile}
-                    </p>
-                    {t.hero.title4Mobile && (
-                      <p className="text-sm leading-tight text-center font-light" style={{color: '#1F1F1F', letterSpacing: '0.03em', opacity: 0.85}}>
-                        {t.hero.title4Mobile}
-                      </p>
-                    )}
-                  </div>
-                </div>
-              </div>
+              {/* CTA 按钮 */}
+              <button
+                onClick={() => navigate('/booking')}
+                className="w-full max-w-md py-5 text-white text-xl font-light rounded-3xl shadow-lg hover:shadow-xl transition-all flex items-center justify-between px-8"
+                style={{backgroundColor: '#2C3E50'}}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = '#1a252f';
+                  e.currentTarget.style.transform = 'translateY(-2px)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = '#2C3E50';
+                  e.currentTarget.style.transform = 'translateY(0)';
+                }}
+              >
+                <span>{t.hero.cta}</span>
+                <span className="text-2xl">→</span>
+              </button>
             </div>
           </div>
+
           {/* 桌面端 */}
           <div className="hidden md:block">
-            <div className="space-y-8">
-              <h1 className="text-6xl font-semibold tracking-tight" style={{color: '#1F1F1F', lineHeight: '1.15', letterSpacing: '-0.02em'}}>
+            <div className="space-y-6">
+              {/* 主标题 */}
+              <h1 className="text-8xl font-light" style={{color: '#2C3E50', letterSpacing: '-0.02em'}}>
                 {t.hero.title1}
-                <br />
-                {t.hero.title1Part2}
               </h1>
-              <div className="max-w-2xl mx-auto">
-                <p className="text-base leading-relaxed opacity-70" style={{color: '#1F1F1F', letterSpacing: '0.01em'}}>
+
+              {/* 副标题 */}
+              <h2 className="text-7xl font-light mb-16" style={{color: '#95A5A6', letterSpacing: '-0.01em'}}>
+                {t.hero.title1Part2}
+              </h2>
+
+              {/* 描述文字 */}
+              <div className="max-w-3xl mx-auto mb-20 pt-8">
+                <p className="text-lg leading-relaxed font-light" style={{color: '#5D6D7E', letterSpacing: '0.01em'}}>
                   {t.hero.title2}
                 </p>
               </div>
+
+              {/* CTA 按钮 */}
+              <div className="max-w-4xl mx-auto">
+                <button
+                  onClick={() => navigate('/booking')}
+                  className="w-full py-6 text-white text-2xl font-light rounded-3xl shadow-lg hover:shadow-xl transition-all flex items-center justify-between px-12"
+                  style={{backgroundColor: '#2C3E50'}}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = '#1a252f';
+                    e.currentTarget.style.transform = 'translateY(-2px)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = '#2C3E50';
+                    e.currentTarget.style.transform = 'translateY(0)';
+                  }}
+                >
+                  <span>{t.hero.cta}</span>
+                  <div className="flex items-center gap-4">
+                    <div className="w-px h-8" style={{backgroundColor: 'rgba(255,255,255,0.3)'}}></div>
+                    <span className="text-3xl">→</span>
+                  </div>
+                </button>
+              </div>
             </div>
           </div>
-          <button
-            onClick={() => navigate('/booking')}
-            className="px-10 md:px-14 py-3 md:py-4 text-white text-sm md:text-base transition tracking-wide mt-10 md:mt-14 font-light shadow-lg hover:shadow-xl"
-            style={{backgroundColor: '#1C2B3A'}}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = '#101D29';
-              e.currentTarget.style.transform = 'translateY(-2px)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = '#1C2B3A';
-              e.currentTarget.style.transform = 'translateY(0)';
-            }}
-          >
-            {t.hero.cta}
-          </button>
         </AnimatedSection>
       </section>
 
