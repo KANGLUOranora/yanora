@@ -503,25 +503,27 @@ function App() {
         <AnimatedSection animation="fade-up" className="max-w-4xl mx-auto text-center">
           {/* 移动端：三行显示 */}
           <div className="md:hidden">
-            <div className="text-xl font-light mb-6 leading-snug space-y-0.5">
-              <div className="bg-gradient-to-r from-slate-700 via-slate-800 to-slate-900 bg-clip-text text-transparent">
+            <div className="mb-6 space-y-2">
+              <div className="text-2xl font-medium bg-gradient-to-r from-slate-700 via-slate-800 to-slate-900 bg-clip-text text-transparent">
                 {t.hero.title1}
               </div>
-              <div className="bg-gradient-to-r from-slate-700 via-slate-800 to-slate-900 bg-clip-text text-transparent">
-                {t.hero.title2Mobile}
-              </div>
-              <div className="bg-gradient-to-r from-slate-700 via-slate-800 to-slate-900 bg-clip-text text-transparent">
-                {t.hero.title3Mobile}
+              <div className="text-base font-light leading-snug">
+                <div className="bg-gradient-to-r from-slate-600 via-slate-700 to-slate-800 bg-clip-text text-transparent">
+                  {t.hero.title2Mobile}
+                </div>
+                <div className="bg-gradient-to-r from-slate-600 via-slate-700 to-slate-800 bg-clip-text text-transparent">
+                  {t.hero.title3Mobile}
+                </div>
               </div>
             </div>
           </div>
           {/* 桌面端：两行显示 */}
           <div className="hidden md:block">
-            <div className="text-4xl font-light mb-4 leading-relaxed tracking-wide">
-              <div className="bg-gradient-to-r from-slate-700 via-slate-800 to-slate-900 bg-clip-text text-transparent">
+            <div className="mb-6 space-y-3">
+              <div className="text-5xl font-medium bg-gradient-to-r from-slate-700 via-slate-800 to-slate-900 bg-clip-text text-transparent">
                 {t.hero.title1}
               </div>
-              <div className="bg-gradient-to-r from-slate-700 via-slate-800 to-slate-900 bg-clip-text text-transparent">
+              <div className="text-2xl font-light leading-relaxed tracking-wide bg-gradient-to-r from-slate-600 via-slate-700 to-slate-800 bg-clip-text text-transparent">
                 {t.hero.title2}
               </div>
             </div>
