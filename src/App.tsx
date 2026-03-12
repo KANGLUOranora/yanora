@@ -506,6 +506,8 @@ function App() {
             <div className="space-y-6">
               <h1 className="text-3xl font-semibold tracking-tight" style={{color: '#1F1F1F', lineHeight: '1.2'}}>
                 {t.hero.title1}
+                <br />
+                {t.hero.title1Part2}
               </h1>
               <div className="max-w-xs mx-auto">
                 <p className="text-xs leading-relaxed opacity-70" style={{color: '#1F1F1F'}}>
@@ -521,6 +523,8 @@ function App() {
             <div className="space-y-8">
               <h1 className="text-6xl font-semibold tracking-tight" style={{color: '#1F1F1F', lineHeight: '1.15', letterSpacing: '-0.02em'}}>
                 {t.hero.title1}
+                <br />
+                {t.hero.title1Part2}
               </h1>
               <div className="max-w-2xl mx-auto">
                 <p className="text-base leading-relaxed opacity-70" style={{color: '#1F1F1F', letterSpacing: '0.01em'}}>

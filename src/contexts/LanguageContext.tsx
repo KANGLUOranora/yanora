@@ -92,7 +92,8 @@ const zhTranslations = {
     dental: '牙齿美容',
   },
   hero: {
-    title1: '遇见最美的自己',
+    title1: '你的面容',
+    title1Part2: '完美理解',
     title2: '只有自然独一无二的，你才是这个世界上最独特的符号',
     title2Mobile: '只有自然独一无二的，',
     title3Mobile: '你才是这个世界上最独特的符号',
@@ -650,7 +651,8 @@ const enTranslations = {
     dental: 'Dental Aesthetics',
   },
   hero: {
-    title1: 'Your Face, Perfectly Understood',
+    title1: 'Your Face',
+    title1Part2: 'Perfectly Understood',
     title2: 'Only what is naturally unique',
     title2Mobile: 'Only what is naturally unique',
     title3Mobile: 'Makes you the most distinctive symbol in the world',
