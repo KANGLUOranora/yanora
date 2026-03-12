@@ -345,12 +345,12 @@ function FacialContourPage() {
           </div>
 
           {/* Feature Types Grid */}
-          <div className={`grid grid-cols-1 md:grid-cols-2 ${activeFeature === 'lips' ? 'lg:grid-cols-2' : 'lg:grid-cols-3'} gap-8`}>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {getCurrentTypes().map((type) => (
               <div
                 key={type.id}
-                className="bg-white border transition-all duration-300 overflow-hidden"
-                style={{borderColor: '#E5E7EB'}}
+                className="bg-white border transition-all duration-300 overflow-hidden w-full"
+                style={{borderColor: '#E5E7EB', maxWidth: '400px', margin: '0 auto'}}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform = 'scale(1.02)';
                   e.currentTarget.style.boxShadow = '0 10px 30px rgba(0,0,0,0.1)';
