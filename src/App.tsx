@@ -501,21 +501,23 @@ function App() {
 
       <section className="py-16 md:py-32 px-12">
         <AnimatedSection animation="fade-up" className="max-w-4xl mx-auto text-center">
-          <div className="text-2xl md:text-4xl font-light mb-4 md:mb-4 leading-relaxed tracking-wide">
-            {/* 移动端：三行显示 */}
-            <div className="md:hidden">
-              <div className="bg-gradient-to-r from-slate-700 via-slate-800 to-slate-900 bg-clip-text text-transparent">
+          {/* 移动端：三行显示 */}
+          <div className="md:hidden">
+            <div className="text-xl font-light mb-3 leading-relaxed tracking-wide">
+              <div className="bg-gradient-to-r from-slate-700 via-slate-800 to-slate-900 bg-clip-text text-transparent mb-1">
                 {t.hero.title1}
               </div>
-              <div className="bg-gradient-to-r from-slate-700 via-slate-800 to-slate-900 bg-clip-text text-transparent">
+              <div className="bg-gradient-to-r from-slate-700 via-slate-800 to-slate-900 bg-clip-text text-transparent mb-1">
                 {t.hero.title2Mobile}
               </div>
               <div className="bg-gradient-to-r from-slate-700 via-slate-800 to-slate-900 bg-clip-text text-transparent">
                 {t.hero.title3Mobile}
               </div>
             </div>
-            {/* 桌面端：两行显示 */}
-            <div className="hidden md:block">
+          </div>
+          {/* 桌面端：两行显示 */}
+          <div className="hidden md:block">
+            <div className="text-4xl font-light mb-4 leading-relaxed tracking-wide">
               <div className="bg-gradient-to-r from-slate-700 via-slate-800 to-slate-900 bg-clip-text text-transparent">
                 {t.hero.title1}
               </div>
