@@ -515,7 +515,7 @@ function App() {
               </h2>
 
               {/* 描述文字 */}
-              <div className="max-w-md mb-8">
+              <div className="max-w-md mb-6">
                 <p className="text-base leading-relaxed font-light" style={{color: '#5D6D7E', letterSpacing: '0.01em'}}>
                   {t.hero.title2Mobile}
                 </p>
