@@ -503,31 +503,45 @@ function App() {
         <AnimatedSection animation="fade-up" className="max-w-5xl mx-auto text-center">
           {/* 移动端 */}
           <div className="md:hidden">
-            <div className="flex flex-col items-center">
-              <h1 className="text-3xl font-semibold tracking-tight mb-6" style={{color: '#1F1F1F', lineHeight: '1.2'}}>
-                {t.hero.title1}
-                <br />
-                {t.hero.title1Part2}
-              </h1>
+            <div className="flex flex-col items-center px-4">
+              {/* 主标题组 */}
+              <div className="relative mb-10">
+                <h1 className="text-4xl font-light tracking-tight text-center" style={{color: '#1F1F1F', lineHeight: '1.3', letterSpacing: '-0.01em'}}>
+                  {t.hero.title1}
+                  <br />
+                  <span className="font-semibold">{t.hero.title1Part2}</span>
+                </h1>
 
-              {/* 装饰线条 */}
-              <div className="w-20 h-px mb-8" style={{
-                background: 'linear-gradient(90deg, transparent, #1C2B3A, transparent)'
-              }} />
+                {/* 装饰元素 - 底部渐变线 */}
+                <div className="absolute -bottom-5 left-1/2 transform -translate-x-1/2 w-24 h-0.5" style={{
+                  background: 'linear-gradient(90deg, transparent, #1C2B3A 20%, #1C2B3A 80%, transparent)'
+                }} />
+              </div>
 
-              {/* 三行副标题 */}
-              <div className="space-y-1.5 max-w-xs">
-                <p className="text-xs leading-relaxed opacity-70 text-center" style={{color: '#1F1F1F', letterSpacing: '0.02em'}}>
-                  {t.hero.title2Mobile}
-                </p>
-                <p className="text-xs leading-relaxed opacity-70 text-center" style={{color: '#1F1F1F', letterSpacing: '0.02em'}}>
-                  {t.hero.title3Mobile}
-                </p>
-                {t.hero.title4Mobile && (
-                  <p className="text-xs leading-relaxed opacity-70 text-center" style={{color: '#1F1F1F', letterSpacing: '0.02em'}}>
-                    {t.hero.title4Mobile}
-                  </p>
-                )}
+              {/* 副标题区域 - 带背景卡片效果 */}
+              <div className="relative max-w-sm w-full">
+                <div className="px-8 py-6 rounded-2xl" style={{
+                  background: 'linear-gradient(135deg, rgba(28, 43, 58, 0.02), rgba(28, 43, 58, 0.04))',
+                  border: '1px solid rgba(28, 43, 58, 0.08)'
+                }}>
+                  <div className="space-y-2">
+                    <p className="text-sm leading-relaxed text-center font-light" style={{color: '#1F1F1F', letterSpacing: '0.03em', opacity: 0.85}}>
+                      {t.hero.title2Mobile}
+                    </p>
+                    <p className="text-sm leading-relaxed text-center font-light" style={{color: '#1F1F1F', letterSpacing: '0.03em', opacity: 0.85}}>
+                      {t.hero.title3Mobile}
+                    </p>
+                    {t.hero.title4Mobile && (
+                      <p className="text-sm leading-relaxed text-center font-light" style={{color: '#1F1F1F', letterSpacing: '0.03em', opacity: 0.85}}>
+                        {t.hero.title4Mobile}
+                      </p>
+                    )}
+                  </div>
+                </div>
+
+                {/* 装饰性圆点 */}
+                <div className="absolute -top-1 -right-1 w-2 h-2 rounded-full" style={{backgroundColor: '#1C2B3A', opacity: 0.3}} />
+                <div className="absolute -bottom-1 -left-1 w-2 h-2 rounded-full" style={{backgroundColor: '#1C2B3A', opacity: 0.3}} />
               </div>
             </div>
           </div>
