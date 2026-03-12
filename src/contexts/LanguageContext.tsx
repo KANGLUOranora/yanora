@@ -254,6 +254,15 @@ const zhTranslations = {
     },
     updates: '我们可能会不时更新本隐私政策。我们会在本页面上发布新的隐私政策，并更新"最后更新日期"。我们建议您定期查看本政策以了解任何变化。',
   },
+  afterSalesPage: {
+    title: '售后服务',
+    subtitle: '我们致力于为每一位客户提供专业、贴心的售后服务，确保您的满意与安心',
+    contactTitle: '联系售后',
+    contactIntro: '如果您在使用服务过程中遇到任何问题，或需要售后支持，请随时通过以下方式联系我们：',
+    phoneLabel: '客服热线',
+    emailLabel: '电子邮箱',
+    serviceHours: '服务时间：周一至周日 9:00 - 21:00',
+  },
   concerns: {
     title: '那些你担心或已经发生的问题',
     issue1Title: '比例与量感失控',
@@ -802,6 +811,15 @@ const enTranslations = {
       phone: 'Phone',
     },
     updates: 'We may update this privacy policy from time to time. We will post the new privacy policy on this page and update the "Last Updated" date. We recommend that you review this policy regularly to stay informed of any changes.',
+  },
+  afterSalesPage: {
+    title: 'After Sales Service',
+    subtitle: 'We are committed to providing professional and caring after-sales service to every customer, ensuring your satisfaction and peace of mind',
+    contactTitle: 'Contact After Sales',
+    contactIntro: 'If you encounter any problems during the use of our services or need after-sales support, please feel free to contact us:',
+    phoneLabel: 'Customer Hotline',
+    emailLabel: 'Email',
+    serviceHours: 'Service Hours: Monday to Sunday 9:00 - 21:00',
   },
   concerns: {
     title: 'Common Concerns You May Have',
