@@ -635,7 +635,7 @@ const zhTranslations = {
 
 const enTranslations = {
   splash: {
-    tagline: 'Your Face, Perfectly Understood',
+    tagline: 'Your Face\nPerfectly Understood',
   },
   nav: {
     home: 'Home',

@@ -121,7 +121,7 @@ function SplashScreen({ onComplete }: SplashScreenProps) {
             />
 
             <p
-              className="text-lg sm:text-xl md:text-3xl lg:text-4xl font-light tracking-wide text-white px-4"
+              className="text-lg sm:text-xl md:text-3xl lg:text-4xl font-light tracking-wide text-white px-4 whitespace-pre-line text-center"
               style={{
                 textShadow: '0 2px 20px rgba(0, 0, 0, 0.4)',
                 animation: 'fadeIn 1.5s ease-out 1.2s forwards',
