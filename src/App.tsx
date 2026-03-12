@@ -524,15 +524,15 @@ function App() {
                   background: 'linear-gradient(135deg, rgba(28, 43, 58, 0.02), rgba(28, 43, 58, 0.04))',
                   border: '1px solid rgba(28, 43, 58, 0.08)'
                 }}>
-                  <div className="space-y-2">
-                    <p className="text-sm leading-relaxed text-center font-light" style={{color: '#1F1F1F', letterSpacing: '0.03em', opacity: 0.85}}>
+                  <div className="space-y-0.5">
+                    <p className="text-sm leading-tight text-center font-light" style={{color: '#1F1F1F', letterSpacing: '0.03em', opacity: 0.85}}>
                       {t.hero.title2Mobile}
                     </p>
-                    <p className="text-sm leading-relaxed text-center font-light" style={{color: '#1F1F1F', letterSpacing: '0.03em', opacity: 0.85}}>
+                    <p className="text-sm leading-tight text-center font-light" style={{color: '#1F1F1F', letterSpacing: '0.03em', opacity: 0.85}}>
                       {t.hero.title3Mobile}
                     </p>
                     {t.hero.title4Mobile && (
-                      <p className="text-sm leading-relaxed text-center font-light" style={{color: '#1F1F1F', letterSpacing: '0.03em', opacity: 0.85}}>
+                      <p className="text-sm leading-tight text-center font-light" style={{color: '#1F1F1F', letterSpacing: '0.03em', opacity: 0.85}}>
                         {t.hero.title4Mobile}
                       </p>
                     )}
