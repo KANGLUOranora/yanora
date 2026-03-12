@@ -513,8 +513,9 @@ function App() {
                 </h1>
 
                 {/* 装饰元素 - 底部渐变线 */}
-                <div className="absolute -bottom-5 left-1/2 transform -translate-x-1/2 w-24 h-0.5" style={{
-                  background: 'linear-gradient(90deg, transparent, #1C2B3A 20%, #1C2B3A 80%, transparent)'
+                <div className="absolute -bottom-5 left-1/2 transform -translate-x-1/2 w-24 h-px" style={{
+                  background: 'linear-gradient(90deg, transparent, #1C2B3A 20%, #1C2B3A 80%, transparent)',
+                  opacity: 0.3
                 }} />
               </div>
 
