@@ -503,18 +503,31 @@ function App() {
         <AnimatedSection animation="fade-up" className="max-w-5xl mx-auto text-center">
           {/* 移动端 */}
           <div className="md:hidden">
-            <div className="space-y-6">
-              <h1 className="text-3xl font-semibold tracking-tight" style={{color: '#1F1F1F', lineHeight: '1.2'}}>
+            <div className="flex flex-col items-center">
+              <h1 className="text-3xl font-semibold tracking-tight mb-6" style={{color: '#1F1F1F', lineHeight: '1.2'}}>
                 {t.hero.title1}
                 <br />
                 {t.hero.title1Part2}
               </h1>
-              <div className="max-w-xs mx-auto">
-                <p className="text-xs leading-relaxed opacity-70" style={{color: '#1F1F1F'}}>
+
+              {/* 装饰线条 */}
+              <div className="w-20 h-px mb-8" style={{
+                background: 'linear-gradient(90deg, transparent, #1C2B3A, transparent)'
+              }} />
+
+              {/* 三行副标题 */}
+              <div className="space-y-1.5 max-w-xs">
+                <p className="text-xs leading-relaxed opacity-70 text-center" style={{color: '#1F1F1F', letterSpacing: '0.02em'}}>
                   {t.hero.title2Mobile}
-                  <br />
+                </p>
+                <p className="text-xs leading-relaxed opacity-70 text-center" style={{color: '#1F1F1F', letterSpacing: '0.02em'}}>
                   {t.hero.title3Mobile}
                 </p>
+                {t.hero.title4Mobile && (
+                  <p className="text-xs leading-relaxed opacity-70 text-center" style={{color: '#1F1F1F', letterSpacing: '0.02em'}}>
+                    {t.hero.title4Mobile}
+                  </p>
+                )}
               </div>
             </div>
           </div>
