@@ -85,13 +85,6 @@ function Footer() {
               >
                 <span>{t('footer.terms')}</span>
               </a>
-              <a
-                href="/disclaimer"
-                className="flex items-center gap-2 text-sm font-light hover:text-white transition"
-                style={{color: '#A0A7B5'}}
-              >
-                <span>{t('footer.disclaimer')}</span>
-              </a>
             </div>
           </div>
         </div>
