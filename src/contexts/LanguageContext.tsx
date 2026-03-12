@@ -633,7 +633,7 @@ const zhTranslations = {
 
 const enTranslations = {
   splash: {
-    tagline: 'Meet the Most Beautiful You',
+    tagline: 'Your Face, Perfectly Understood',
   },
   nav: {
     home: 'Home',
@@ -650,7 +650,7 @@ const enTranslations = {
     dental: 'Dental Aesthetics',
   },
   hero: {
-    title1: 'Meet the Most Beautiful You',
+    title1: 'Your Face, Perfectly Understood',
     title2: 'Only what is naturally unique',
     title2Mobile: 'Only what is naturally unique',
     title3Mobile: 'Makes you the most distinctive symbol in the world',
