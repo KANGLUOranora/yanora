@@ -505,7 +505,7 @@ function App() {
           <div className="md:hidden">
             <div className="flex flex-col items-center px-4">
               {/* 主标题组 */}
-              <div className="mb-10">
+              <div className="mb-6">
                 <h1 className="text-center" style={{color: '#1F1F1F', lineHeight: '1.3', letterSpacing: '-0.01em'}}>
                   <div className="text-4xl font-light tracking-tight">{t.hero.title1}</div>
                   <div className="text-2xl font-semibold tracking-tight whitespace-nowrap mt-1">{t.hero.title1Part2}</div>
@@ -514,7 +514,7 @@ function App() {
 
               {/* 副标题区域 - 带背景卡片效果 */}
               <div className="max-w-sm w-full">
-                <div className="px-8 py-6 rounded-2xl" style={{
+                <div className="px-8 py-4 rounded-2xl" style={{
                   background: 'linear-gradient(135deg, rgba(28, 43, 58, 0.02), rgba(28, 43, 58, 0.04))',
                   border: '1px solid rgba(28, 43, 58, 0.08)'
                 }}>
