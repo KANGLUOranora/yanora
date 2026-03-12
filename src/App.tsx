@@ -503,7 +503,7 @@ function App() {
         <AnimatedSection animation="fade-up" className="max-w-4xl mx-auto text-center">
           {/* 移动端：三行显示 */}
           <div className="md:hidden">
-            <div className="text-base font-light mb-6 leading-snug space-y-0.5">
+            <div className="text-xl font-light mb-6 leading-snug space-y-0.5">
               <div className="bg-gradient-to-r from-slate-700 via-slate-800 to-slate-900 bg-clip-text text-transparent">
                 {t.hero.title1}
               </div>
