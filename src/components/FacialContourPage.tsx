@@ -15,10 +15,11 @@ function FacialContourPage() {
   const [activeFeature, setActiveFeature] = useState<'nose' | 'eyes' | 'lips'>('nose');
 
   const noseTypes = [
-    { id: 1, name: t('facialContour.features.noseTypes.straight.name'), description: t('facialContour.features.noseTypes.straight.desc'), image: '🖼️' },
-    { id: 2, name: t('facialContour.features.noseTypes.upturned.name'), description: t('facialContour.features.noseTypes.upturned.desc'), image: '🖼️' },
-    { id: 3, name: t('facialContour.features.noseTypes.box.name'), description: t('facialContour.features.noseTypes.box.desc'), image: '🖼️' },
-    { id: 4, name: t('facialContour.features.noseTypes.droplet.name'), description: t('facialContour.features.noseTypes.droplet.desc'), image: '🖼️' },
+    { id: 1, image: '/nose/00afd0b54910a9b6108263ef92983555.jpg' },
+    { id: 2, image: '/nose/075396851531cb3d8f8820559f7c29e8.jpg' },
+    { id: 3, image: '/nose/2ac0b0e6dad8f9b7fe78a012030f3c42.jpg' },
+    { id: 4, image: '/nose/9283f8549223b7615dc96b4db3382b81.jpg' },
+    { id: 5, image: '/nose/da8fd3dd4d7755ac81e6f918a3c57f6d.jpg' },
   ];
 
   const eyeTypes = [
@@ -359,32 +360,13 @@ function FacialContourPage() {
                   e.currentTarget.style.boxShadow = 'none';
                 }}
               >
-                {activeFeature === 'eyes' || activeFeature === 'lips' ? (
-                  <div className="w-full aspect-square overflow-hidden">
-                    <img
-                      src={type.image}
-                      alt={activeFeature === 'eyes' ? 'Eye type' : 'Lip type'}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                ) : (
-                  <>
-                    <div
-                      className="aspect-square flex items-center justify-center text-6xl"
-                      style={{backgroundColor: '#F9FAFB'}}
-                    >
-                      {type.image}
-                    </div>
-                    <div className="p-6 text-center">
-                      <h3 className="text-base md:text-lg font-normal mb-2" style={{color: '#1F1F1F'}}>
-                        {type.name}
-                      </h3>
-                      <p className="text-xs md:text-sm font-light" style={{color: '#6B7280'}}>
-                        {type.description}
-                      </p>
-                    </div>
-                  </>
-                )}
+                <div className="w-full aspect-square overflow-hidden">
+                  <img
+                    src={type.image}
+                    alt={activeFeature === 'nose' ? 'Nose type' : activeFeature === 'eyes' ? 'Eye type' : 'Lip type'}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
               </div>
             ))}
           </div>
