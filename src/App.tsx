@@ -505,21 +505,15 @@ function App() {
           <div className="md:hidden">
             <div className="flex flex-col items-center px-4">
               {/* 主标题组 */}
-              <div className="relative mb-10">
+              <div className="mb-10">
                 <h1 className="text-center" style={{color: '#1F1F1F', lineHeight: '1.3', letterSpacing: '-0.01em'}}>
                   <div className="text-4xl font-light tracking-tight">{t.hero.title1}</div>
                   <div className="text-2xl font-semibold tracking-tight whitespace-nowrap mt-1">{t.hero.title1Part2}</div>
                 </h1>
-
-                {/* 装饰元素 - 底部渐变线 */}
-                <div className="absolute -bottom-5 left-1/2 transform -translate-x-1/2 w-24 h-px" style={{
-                  background: 'linear-gradient(90deg, transparent, #1C2B3A 20%, #1C2B3A 80%, transparent)',
-                  opacity: 0.3
-                }} />
               </div>
 
               {/* 副标题区域 - 带背景卡片效果 */}
-              <div className="relative max-w-sm w-full">
+              <div className="max-w-sm w-full">
                 <div className="px-8 py-6 rounded-2xl" style={{
                   background: 'linear-gradient(135deg, rgba(28, 43, 58, 0.02), rgba(28, 43, 58, 0.04))',
                   border: '1px solid rgba(28, 43, 58, 0.08)'
@@ -538,10 +532,6 @@ function App() {
                     )}
                   </div>
                 </div>
-
-                {/* 装饰性圆点 */}
-                <div className="absolute -top-1 -right-1 w-2 h-2 rounded-full" style={{backgroundColor: '#1C2B3A', opacity: 0.3}} />
-                <div className="absolute -bottom-1 -left-1 w-2 h-2 rounded-full" style={{backgroundColor: '#1C2B3A', opacity: 0.3}} />
               </div>
             </div>
           </div>
