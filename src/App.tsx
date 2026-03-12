@@ -506,10 +506,9 @@ function App() {
             <div className="flex flex-col items-center px-4">
               {/* 主标题组 */}
               <div className="relative mb-10">
-                <h1 className="text-4xl font-light tracking-tight text-center" style={{color: '#1F1F1F', lineHeight: '1.3', letterSpacing: '-0.01em'}}>
-                  {t.hero.title1}
-                  <br />
-                  <span className="font-semibold whitespace-nowrap">{t.hero.title1Part2}</span>
+                <h1 className="text-center" style={{color: '#1F1F1F', lineHeight: '1.3', letterSpacing: '-0.01em'}}>
+                  <div className="text-4xl font-light tracking-tight">{t.hero.title1}</div>
+                  <div className="text-2xl font-semibold tracking-tight whitespace-nowrap mt-1">{t.hero.title1Part2}</div>
                 </h1>
 
                 {/* 装饰元素 - 底部渐变线 */}
