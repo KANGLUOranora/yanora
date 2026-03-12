@@ -499,15 +499,15 @@ function App() {
         />
       )}
 
-      <section className="py-16 md:py-32 px-12">
+      <section className="py-16 md:py-32 px-6 md:px-12">
         <AnimatedSection animation="fade-up" className="max-w-4xl mx-auto text-center">
           {/* 移动端：三行显示 */}
           <div className="md:hidden">
-            <div className="text-xl font-light mb-3 leading-relaxed tracking-wide">
-              <div className="bg-gradient-to-r from-slate-700 via-slate-800 to-slate-900 bg-clip-text text-transparent mb-1">
+            <div className="text-base font-light mb-6 leading-snug space-y-0.5">
+              <div className="bg-gradient-to-r from-slate-700 via-slate-800 to-slate-900 bg-clip-text text-transparent">
                 {t.hero.title1}
               </div>
-              <div className="bg-gradient-to-r from-slate-700 via-slate-800 to-slate-900 bg-clip-text text-transparent mb-1">
+              <div className="bg-gradient-to-r from-slate-700 via-slate-800 to-slate-900 bg-clip-text text-transparent">
                 {t.hero.title2Mobile}
               </div>
               <div className="bg-gradient-to-r from-slate-700 via-slate-800 to-slate-900 bg-clip-text text-transparent">
@@ -528,7 +528,7 @@ function App() {
           </div>
           <button
             onClick={() => navigate('/booking')}
-            className="px-12 py-3 text-white text-sm transition tracking-wider mt-8"
+            className="px-8 md:px-12 py-2.5 md:py-3 text-white text-xs md:text-sm transition tracking-wider mt-6 md:mt-8"
             style={{backgroundColor: '#1C2B3A'}}
             onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#101D29'}
             onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#1C2B3A'}
