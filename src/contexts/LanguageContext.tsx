@@ -94,10 +94,10 @@ const zhTranslations = {
   hero: {
     title1: '你的面容',
     title1Part2: '完美理解',
-    title2: '只有自然独一无二的，你才是这个世界上最独特的符号',
-    title2Mobile: '只有自然独一无二的',
-    title3Mobile: '才是这个世界上',
-    title4Mobile: '最独特的符号',
+    title2: 'Only what is naturally unique Makes you the most distinctive symbol in the world',
+    title2Mobile: 'Only what is naturally unique Makes you the most distinctive symbol in the world',
+    title3Mobile: '',
+    title4Mobile: '',
     cta: '现在开始探索',
   },
   services: {
@@ -654,10 +654,10 @@ const enTranslations = {
   hero: {
     title1: 'Your Face',
     title1Part2: 'Perfectly Understood',
-    title2: 'Only what is naturally unique',
-    title2Mobile: 'Only what is naturally unique',
-    title3Mobile: 'Makes you the most distinctive',
-    title4Mobile: 'Symbol in the world',
+    title2: 'Only what is naturally unique Makes you the most distinctive symbol in the world',
+    title2Mobile: 'Only what is naturally unique Makes you the most distinctive symbol in the world',
+    title3Mobile: '',
+    title4Mobile: '',
     cta: 'Start Exploring Now',
   },
   services: {

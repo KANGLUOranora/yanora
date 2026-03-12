@@ -505,12 +505,12 @@ function App() {
           <div className="md:hidden">
             <div className="flex flex-col items-center px-4">
               {/* 主标题 */}
-              <h1 className="text-6xl font-light mb-2" style={{color: '#2C3E50', letterSpacing: '-0.02em'}}>
+              <h1 className="text-4xl font-light mb-2" style={{color: '#2C3E50', letterSpacing: '-0.02em'}}>
                 {t.hero.title1}
               </h1>
 
               {/* 副标题 */}
-              <h2 className="text-5xl font-light mb-12" style={{color: '#95A5A6', letterSpacing: '-0.01em'}}>
+              <h2 className="text-3xl font-light mb-12" style={{color: '#95A5A6', letterSpacing: '-0.01em'}}>
                 {t.hero.title1Part2}
               </h2>
 
