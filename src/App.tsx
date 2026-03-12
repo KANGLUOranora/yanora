@@ -508,7 +508,7 @@ function App() {
                 {t.hero.title1}
               </h1>
               <div className="max-w-xs mx-auto">
-                <p className="text-sm leading-relaxed opacity-70" style={{color: '#1F1F1F'}}>
+                <p className="text-xs leading-relaxed opacity-70" style={{color: '#1F1F1F'}}>
                   {t.hero.title2Mobile}
                   <br />
                   {t.hero.title3Mobile}
@@ -523,7 +523,7 @@ function App() {
                 {t.hero.title1}
               </h1>
               <div className="max-w-2xl mx-auto">
-                <p className="text-lg leading-relaxed opacity-70" style={{color: '#1F1F1F', letterSpacing: '0.01em'}}>
+                <p className="text-base leading-relaxed opacity-70" style={{color: '#1F1F1F', letterSpacing: '0.01em'}}>
                   {t.hero.title2}
                 </p>
               </div>
