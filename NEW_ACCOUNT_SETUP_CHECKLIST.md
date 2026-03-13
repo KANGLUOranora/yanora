@@ -24,37 +24,67 @@ SUPABASE_SERVICE_ROLE_KEY=你的Service Role Key
 
 ## 步骤 2: 运行数据库迁移（创建表结构）
 
-### 推荐方式：使用 Supabase Dashboard SQL Editor
+### 使用 Supabase Dashboard SQL Editor
 
 1. 打开你的 Supabase 项目
 2. 点击左侧菜单 **SQL Editor**
-3. **只需运行这一个文件**（已包含完整表结构）：
+3. **按顺序运行以下 3 个核心文件**：
 
+#### 文件 1: 创建 Profiles 表
+```
+supabase/migrations/20260220143926_create_profiles_table.sql
+```
+创建用户档案表和头像存储桶
+
+#### 文件 2: 创建主要数据库结构
 ```
 supabase/migrations/20260312151431_create_complete_database_structure.sql
 ```
-
-这个文件会创建以下表：
-- `profiles` - 用户档案表
+创建以下表：
 - `admins` - 管理员表
 - `bookings` - 预订表
 - `case_studies` - 案例对比图表
 - `detailed_cases` - 详细案例表
-- `detailed_case_comparisons` - 详细案例对比表
 - `faqs` - 常见问题表
 - `testimonials` - 客户评价表
 - `payments` - 支付记录表
 
-以及 Storage Buckets：
+以及 Storage Bucket：
 - `case-images` - 案例图片存储
-- `images` - 通用图片存储
-- `case-comparisons` - 案例对比图片存储
+
+#### 文件 3: 创建详细案例对比表和存储桶
+```
+supabase/migrations/20260310053458_create_detailed_case_comparisons_table.sql
+```
+创建 `detailed_case_comparisons` 表和 `case-comparisons` 存储桶
 
 ---
 
-## 步骤 3: 运行补充迁移文件（可选但推荐）
+## 步骤 3: 运行补充迁移文件（必需）
 
-如果你想要最新的修复和优化，按顺序运行以下文件：
+这些文件包含重要的修复和功能，**必须运行**：
+
+#### 文件 4: 创建 images 存储桶（用于评价图片）
+```
+supabase/migrations/20260313071114_create_images_storage_bucket_for_testimonials.sql
+```
+
+#### 文件 5: 修复 Profile 触发器
+```
+supabase/migrations/20260313074818_fix_profile_trigger_and_structure.sql
+```
+添加自动创建 profile 的触发器
+
+#### 文件 6: 确保管理员可访问 profiles
+```
+supabase/migrations/20260313074904_ensure_admin_profiles_access.sql
+```
+
+---
+
+## 步骤 4: 运行可选的优化文件
+
+以下文件包含额外的优化和功能，可以根据需要运行：
 
 ```sql
 -- 1. 修复存储策略
@@ -66,33 +96,22 @@ supabase/migrations/20260313062832_fix_detailed_cases_table_structure.sql
 -- 3. 更新客户评价表（支持多语言和图片）
 supabase/migrations/20260313070939_update_testimonials_table_with_bilingual_and_images.sql
 
--- 4. 创建图片存储桶
-supabase/migrations/20260313071114_create_images_storage_bucket_for_testimonials.sql
-
--- 5. 添加 FAQ 缺失字段
+-- 4. 添加 FAQ 缺失字段
 supabase/migrations/20260313072658_add_missing_fields_to_faqs_table.sql
 
--- 6. FAQ 多语言支持
+-- 5. FAQ 多语言支持
 supabase/migrations/20260313073004_add_bilingual_support_to_faqs.sql
 
--- 7. 修复 Profile 触发器
-supabase/migrations/20260313074818_fix_profile_trigger_and_structure.sql
-
--- 8. 确保管理员可访问 profiles
-supabase/migrations/20260313074904_ensure_admin_profiles_access.sql
-
--- 9. 添加预订缺失字段
+-- 6. 添加预订缺失字段
 supabase/migrations/20260313080401_add_missing_booking_fields.sql
 
--- 10. 修复预订 RLS 策略
+-- 7. 修复预订 RLS 策略
 supabase/migrations/20260313081216_fix_bookings_rls_remove_users_table_query.sql
 ```
 
-**提示**：你可以一次性复制所有内容到 SQL Editor 运行。
-
 ---
 
-## 步骤 4: 创建超级管理员账户
+## 步骤 5: 创建超级管理员账户
 
 数据库结构创建完成后，需要创建第一个超级管理员。
 
@@ -125,7 +144,7 @@ VALUES ('your-user-id', 'your-email@example.com', 'super_admin', true);
 
 ---
 
-## 步骤 5: 验证设置
+## 步骤 6: 验证设置
 
 运行以下 SQL 检查表是否创建成功：
 
@@ -162,7 +181,7 @@ SELECT name FROM storage.buckets;
 
 ---
 
-## 步骤 6: 测试应用
+## 步骤 7: 测试应用
 
 1. 更新 `.env` 文件
 2. 重启应用：`npm run dev`
