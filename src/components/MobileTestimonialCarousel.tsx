@@ -1,18 +1,22 @@
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { supabase } from '../lib/supabase';
+import { useLanguage } from '../contexts/LanguageContext';
 
 interface Testimonial {
   id: string;
   image1_url: string;
   image2_url: string;
   image3_url: string;
-  message: string;
-  customer_name: string;
+  message_zh: string;
+  message_en: string;
+  customer_name_zh: string;
+  customer_name_en: string;
   display_order: number;
 }
 
 function MobileTestimonialCarousel() {
+  const { language } = useLanguage();
   const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [loading, setLoading] = useState(true);
@@ -153,10 +157,10 @@ function MobileTestimonialCarousel() {
 
           <div className="text-center max-w-lg md:max-w-2xl mx-auto">
             <p className="text-sm md:text-base font-light leading-relaxed mb-4 md:mb-6" style={{color: '#4B5563'}}>
-              "{currentTestimonial.message}"
+              "{language === 'zh' ? currentTestimonial.message_zh : currentTestimonial.message_en}"
             </p>
             <p className="text-xs md:text-sm font-normal" style={{color: '#1F1F1F'}}>
-              — {currentTestimonial.customer_name}
+              — {language === 'zh' ? currentTestimonial.customer_name_zh : currentTestimonial.customer_name_en}
             </p>
           </div>
         </div>

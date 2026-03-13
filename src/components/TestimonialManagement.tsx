@@ -1,14 +1,16 @@
 import { useState, useEffect } from 'react';
 import { supabase } from '../lib/supabase';
-import { Pencil, Trash2, Plus, X, Upload, Image as ImageIcon } from 'lucide-react';
+import { Pencil, Trash2, Plus, X, Image as ImageIcon } from 'lucide-react';
 
 interface Testimonial {
   id: string;
   image1_url: string;
   image2_url: string;
   image3_url: string;
-  message: string;
-  customer_name: string;
+  message_zh: string;
+  message_en: string;
+  customer_name_zh: string;
+  customer_name_en: string;
   display_order: number;
   is_active: boolean;
   created_at: string;
@@ -23,8 +25,10 @@ export default function TestimonialManagement() {
     image1_url: '',
     image2_url: '',
     image3_url: '',
-    message: '',
-    customer_name: '',
+    message_zh: '',
+    message_en: '',
+    customer_name_zh: '',
+    customer_name_en: '',
     display_order: 0,
     is_active: true
   });
@@ -79,8 +83,10 @@ export default function TestimonialManagement() {
       image1_url: testimonial.image1_url,
       image2_url: testimonial.image2_url,
       image3_url: testimonial.image3_url,
-      message: testimonial.message,
-      customer_name: testimonial.customer_name,
+      message_zh: testimonial.message_zh,
+      message_en: testimonial.message_en,
+      customer_name_zh: testimonial.customer_name_zh,
+      customer_name_en: testimonial.customer_name_en,
       display_order: testimonial.display_order,
       is_active: testimonial.is_active
     });
@@ -106,8 +112,10 @@ export default function TestimonialManagement() {
       image1_url: '',
       image2_url: '',
       image3_url: '',
-      message: '',
-      customer_name: '',
+      message_zh: '',
+      message_en: '',
+      customer_name_zh: '',
+      customer_name_en: '',
       display_order: 0,
       is_active: true
     });
@@ -222,32 +230,64 @@ export default function TestimonialManagement() {
 
               <div>
                 <label className="block text-sm font-medium mb-2" style={{ color: '#4B5563' }}>
-                  评价内容
+                  评价内容（中文）
                 </label>
                 <textarea
-                  value={formData.message}
-                  onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))}
+                  value={formData.message_zh}
+                  onChange={(e) => setFormData(prev => ({ ...prev, message_zh: e.target.value }))}
                   required
-                  rows={4}
+                  rows={3}
                   className="w-full px-3 py-2 border rounded"
                   style={{ borderColor: '#D1D5DB' }}
-                  placeholder="输入客户评价内容..."
+                  placeholder="输入客户评价内容（中文）..."
                 />
               </div>
 
               <div>
                 <label className="block text-sm font-medium mb-2" style={{ color: '#4B5563' }}>
-                  客户姓名
+                  评价内容（英文）
                 </label>
-                <input
-                  type="text"
-                  value={formData.customer_name}
-                  onChange={(e) => setFormData(prev => ({ ...prev, customer_name: e.target.value }))}
+                <textarea
+                  value={formData.message_en}
+                  onChange={(e) => setFormData(prev => ({ ...prev, message_en: e.target.value }))}
                   required
+                  rows={3}
                   className="w-full px-3 py-2 border rounded"
                   style={{ borderColor: '#D1D5DB' }}
-                  placeholder="输入客户姓名..."
+                  placeholder="Enter customer review (English)..."
                 />
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-medium mb-2" style={{ color: '#4B5563' }}>
+                    客户姓名（中文）
+                  </label>
+                  <input
+                    type="text"
+                    value={formData.customer_name_zh}
+                    onChange={(e) => setFormData(prev => ({ ...prev, customer_name_zh: e.target.value }))}
+                    required
+                    className="w-full px-3 py-2 border rounded"
+                    style={{ borderColor: '#D1D5DB' }}
+                    placeholder="输入客户姓名（中文）..."
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium mb-2" style={{ color: '#4B5563' }}>
+                    客户姓名（英文）
+                  </label>
+                  <input
+                    type="text"
+                    value={formData.customer_name_en}
+                    onChange={(e) => setFormData(prev => ({ ...prev, customer_name_en: e.target.value }))}
+                    required
+                    className="w-full px-3 py-2 border rounded"
+                    style={{ borderColor: '#D1D5DB' }}
+                    placeholder="Enter customer name (English)..."
+                  />
+                </div>
               </div>
 
               <div className="grid grid-cols-2 gap-4">
@@ -328,7 +368,7 @@ export default function TestimonialManagement() {
                 <div className="flex items-start justify-between mb-2">
                   <div>
                     <h4 className="font-medium" style={{ color: '#1F1F1F' }}>
-                      {testimonial.customer_name}
+                      {testimonial.customer_name_zh} / {testimonial.customer_name_en}
                     </h4>
                     <span className="text-xs" style={{ color: '#9CA3AF' }}>
                       顺序: {testimonial.display_order}
@@ -356,9 +396,14 @@ export default function TestimonialManagement() {
                     </button>
                   </div>
                 </div>
-                <p className="text-sm leading-relaxed" style={{ color: '#6B7280' }}>
-                  {testimonial.message}
-                </p>
+                <div className="space-y-2">
+                  <p className="text-sm leading-relaxed" style={{ color: '#6B7280' }}>
+                    <span className="font-medium">中文：</span>{testimonial.message_zh}
+                  </p>
+                  <p className="text-sm leading-relaxed" style={{ color: '#6B7280' }}>
+                    <span className="font-medium">English：</span>{testimonial.message_en}
+                  </p>
+                </div>
               </div>
             </div>
           </div>
