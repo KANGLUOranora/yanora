@@ -4,9 +4,12 @@ import { Plus, Pencil, Trash2, Save, X } from 'lucide-react';
 
 interface FAQ {
   id: string;
-  category: string;
-  question: string;
-  answer: string;
+  category_zh: string;
+  category_en: string;
+  question_zh: string;
+  question_en: string;
+  answer_zh: string;
+  answer_en: string;
   display_order: number;
   is_active: boolean;
   created_at: string;
@@ -19,9 +22,12 @@ export default function FAQManagement() {
   const [editingId, setEditingId] = useState<string | null>(null);
   const [isAdding, setIsAdding] = useState(false);
   const [formData, setFormData] = useState({
-    category: '',
-    question: '',
-    answer: '',
+    category_zh: '',
+    category_en: '',
+    question_zh: '',
+    question_en: '',
+    answer_zh: '',
+    answer_en: '',
     display_order: 0,
     is_active: true,
   });
@@ -50,9 +56,12 @@ export default function FAQManagement() {
   const handleAdd = () => {
     setIsAdding(true);
     setFormData({
-      category: '',
-      question: '',
-      answer: '',
+      category_zh: '',
+      category_en: '',
+      question_zh: '',
+      question_en: '',
+      answer_zh: '',
+      answer_en: '',
       display_order: faqs.length,
       is_active: true,
     });
@@ -61,9 +70,12 @@ export default function FAQManagement() {
   const handleEdit = (faq: FAQ) => {
     setEditingId(faq.id);
     setFormData({
-      category: faq.category,
-      question: faq.question,
-      answer: faq.answer,
+      category_zh: faq.category_zh,
+      category_en: faq.category_en,
+      question_zh: faq.question_zh,
+      question_en: faq.question_en,
+      answer_zh: faq.answer_zh,
+      answer_en: faq.answer_en,
       display_order: faq.display_order,
       is_active: faq.is_active,
     });
@@ -73,9 +85,12 @@ export default function FAQManagement() {
     setIsAdding(false);
     setEditingId(null);
     setFormData({
-      category: '',
-      question: '',
-      answer: '',
+      category_zh: '',
+      category_en: '',
+      question_zh: '',
+      question_en: '',
+      answer_zh: '',
+      answer_en: '',
       display_order: 0,
       is_active: true,
     });
@@ -83,8 +98,9 @@ export default function FAQManagement() {
 
   const handleSave = async () => {
     try {
-      if (!formData.category || !formData.question || !formData.answer) {
-        alert('请填写所有必填字段');
+      if (!formData.category_zh || !formData.question_zh || !formData.answer_zh ||
+          !formData.category_en || !formData.question_en || !formData.answer_en) {
+        alert('请填写所有必填字段（中英文）');
         return;
       }
 
@@ -158,40 +174,81 @@ export default function FAQManagement() {
             {isAdding ? '添加新 FAQ' : '编辑 FAQ'}
           </h3>
           <div className="space-y-4">
-            <div>
-              <label className="block text-sm font-medium mb-1">类别</label>
-              <input
-                type="text"
-                value={formData.category}
-                onChange={(e) =>
-                  setFormData({ ...formData, category: e.target.value })
-                }
-                className="w-full px-3 py-2 border border-gray-300 focus:outline-none focus:border-black"
-                placeholder="例如：整形手术、预约咨询"
-              />
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <label className="block text-sm font-medium mb-1">类别（中文）*</label>
+                <input
+                  type="text"
+                  value={formData.category_zh}
+                  onChange={(e) =>
+                    setFormData({ ...formData, category_zh: e.target.value })
+                  }
+                  className="w-full px-3 py-2 border border-gray-300 focus:outline-none focus:border-black"
+                  placeholder="例如：整形手术"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium mb-1">Category (English) *</label>
+                <input
+                  type="text"
+                  value={formData.category_en}
+                  onChange={(e) =>
+                    setFormData({ ...formData, category_en: e.target.value })
+                  }
+                  className="w-full px-3 py-2 border border-gray-300 focus:outline-none focus:border-black"
+                  placeholder="e.g., Plastic Surgery"
+                />
+              </div>
             </div>
-            <div>
-              <label className="block text-sm font-medium mb-1">问题</label>
-              <input
-                type="text"
-                value={formData.question}
-                onChange={(e) =>
-                  setFormData({ ...formData, question: e.target.value })
-                }
-                className="w-full px-3 py-2 border border-gray-300 focus:outline-none focus:border-black"
-                placeholder="输入问题"
-              />
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <label className="block text-sm font-medium mb-1">问题（中文）*</label>
+                <input
+                  type="text"
+                  value={formData.question_zh}
+                  onChange={(e) =>
+                    setFormData({ ...formData, question_zh: e.target.value })
+                  }
+                  className="w-full px-3 py-2 border border-gray-300 focus:outline-none focus:border-black"
+                  placeholder="输入问题"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium mb-1">Question (English) *</label>
+                <input
+                  type="text"
+                  value={formData.question_en}
+                  onChange={(e) =>
+                    setFormData({ ...formData, question_en: e.target.value })
+                  }
+                  className="w-full px-3 py-2 border border-gray-300 focus:outline-none focus:border-black"
+                  placeholder="Enter question"
+                />
+              </div>
             </div>
-            <div>
-              <label className="block text-sm font-medium mb-1">答案</label>
-              <textarea
-                value={formData.answer}
-                onChange={(e) =>
-                  setFormData({ ...formData, answer: e.target.value })
-                }
-                className="w-full px-3 py-2 border border-gray-300 focus:outline-none focus:border-black h-32"
-                placeholder="输入答案"
-              />
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <label className="block text-sm font-medium mb-1">答案（中文）*</label>
+                <textarea
+                  value={formData.answer_zh}
+                  onChange={(e) =>
+                    setFormData({ ...formData, answer_zh: e.target.value })
+                  }
+                  className="w-full px-3 py-2 border border-gray-300 focus:outline-none focus:border-black h-32"
+                  placeholder="输入答案"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium mb-1">Answer (English) *</label>
+                <textarea
+                  value={formData.answer_en}
+                  onChange={(e) =>
+                    setFormData({ ...formData, answer_en: e.target.value })
+                  }
+                  className="w-full px-3 py-2 border border-gray-300 focus:outline-none focus:border-black h-32"
+                  placeholder="Enter answer"
+                />
+              </div>
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div>
@@ -257,7 +314,7 @@ export default function FAQManagement() {
               <div className="flex-1">
                 <div className="flex items-center gap-2 mb-1">
                   <span className="text-xs px-2 py-1 bg-gray-200 text-gray-700">
-                    {faq.category}
+                    {faq.category_zh} / {faq.category_en}
                   </span>
                   <span className="text-xs text-gray-500">
                     顺序: {faq.display_order}
@@ -268,8 +325,14 @@ export default function FAQManagement() {
                     </span>
                   )}
                 </div>
-                <h3 className="font-medium mb-2">{faq.question}</h3>
-                <p className="text-sm text-gray-600">{faq.answer}</p>
+                <h3 className="font-medium mb-2">
+                  <div className="text-gray-900">{faq.question_zh}</div>
+                  <div className="text-gray-600 text-sm">{faq.question_en}</div>
+                </h3>
+                <div className="text-sm space-y-1">
+                  <p className="text-gray-600">{faq.answer_zh}</p>
+                  <p className="text-gray-500">{faq.answer_en}</p>
+                </div>
               </div>
               <div className="flex gap-2 ml-4">
                 <button

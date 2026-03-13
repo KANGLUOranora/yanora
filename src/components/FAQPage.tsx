@@ -8,16 +8,19 @@ import { useLanguage } from '../contexts/LanguageContext';
 
 interface FAQItem {
   id: string;
-  question: string;
-  answer: string;
-  category: string;
+  question_zh: string;
+  question_en: string;
+  answer_zh: string;
+  answer_en: string;
+  category_zh: string;
+  category_en: string;
   display_order: number;
   is_active: boolean;
 }
 
 export default function FAQPage() {
   const navigate = useNavigate();
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<string>(t('faqPage.allCategories'));
   const [faqData, setFaqData] = useState<FAQItem[]>([]);
@@ -48,11 +51,14 @@ export default function FAQPage() {
     }
   };
 
-  const categories = [t('faqPage.allCategories'), ...Array.from(new Set(faqData.map(item => item.category)))];
+  const categories = [
+    t('faqPage.allCategories'),
+    ...Array.from(new Set(faqData.map(item => language === 'zh' ? item.category_zh : item.category_en)))
+  ];
 
   const filteredFAQs = selectedCategory === t('faqPage.allCategories')
     ? faqData
-    : faqData.filter(item => item.category === selectedCategory);
+    : faqData.filter(item => (language === 'zh' ? item.category_zh : item.category_en) === selectedCategory);
 
   const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -127,10 +133,10 @@ export default function FAQPage() {
                 >
                   <div className="flex-1 pr-4">
                     <span className="text-xs md:text-sm font-medium mb-1 block" style={{color: '#6B7280'}}>
-                      {faq.category}
+                      {language === 'zh' ? faq.category_zh : faq.category_en}
                     </span>
                     <h3 className="text-base md:text-lg font-normal" style={{color: '#1F1F1F'}}>
-                      {faq.question}
+                      {language === 'zh' ? faq.question_zh : faq.question_en}
                     </h3>
                   </div>
                   <div className="flex-shrink-0">
@@ -148,7 +154,7 @@ export default function FAQPage() {
                 >
                   <div className="px-6 md:px-8 pb-5 md:pb-6 pt-2">
                     <p className="text-sm md:text-base leading-relaxed" style={{color: '#6B7280'}}>
-                      {faq.answer}
+                      {language === 'zh' ? faq.answer_zh : faq.answer_en}
                     </p>
                   </div>
                 </div>
