@@ -86,7 +86,10 @@ CREATE POLICY "Admins can insert detailed case comparisons"
       SELECT 1 FROM admins
       WHERE admins.id = auth.uid()
       AND admins.role IN ('super_admin', 'admin')
-      AND admins.is_active = true
+      AND (NOT EXISTS (
+        SELECT 1 FROM information_schema.columns
+        WHERE table_name = 'admins' AND column_name = 'is_active'
+      ) OR admins.is_active = true)
     )
   );
 
@@ -100,7 +103,10 @@ CREATE POLICY "Admins can update detailed case comparisons"
       SELECT 1 FROM admins
       WHERE admins.id = auth.uid()
       AND admins.role IN ('super_admin', 'admin')
-      AND admins.is_active = true
+      AND (NOT EXISTS (
+        SELECT 1 FROM information_schema.columns
+        WHERE table_name = 'admins' AND column_name = 'is_active'
+      ) OR admins.is_active = true)
     )
   )
   WITH CHECK (
@@ -108,7 +114,10 @@ CREATE POLICY "Admins can update detailed case comparisons"
       SELECT 1 FROM admins
       WHERE admins.id = auth.uid()
       AND admins.role IN ('super_admin', 'admin')
-      AND admins.is_active = true
+      AND (NOT EXISTS (
+        SELECT 1 FROM information_schema.columns
+        WHERE table_name = 'admins' AND column_name = 'is_active'
+      ) OR admins.is_active = true)
     )
   );
 
@@ -122,7 +131,10 @@ CREATE POLICY "Admins can delete detailed case comparisons"
       SELECT 1 FROM admins
       WHERE admins.id = auth.uid()
       AND admins.role IN ('super_admin', 'admin')
-      AND admins.is_active = true
+      AND (NOT EXISTS (
+        SELECT 1 FROM information_schema.columns
+        WHERE table_name = 'admins' AND column_name = 'is_active'
+      ) OR admins.is_active = true)
     )
   );
 
@@ -148,7 +160,10 @@ CREATE POLICY "Admins can upload case comparison images"
       SELECT 1 FROM admins
       WHERE admins.id = auth.uid()
       AND admins.role IN ('super_admin', 'admin')
-      AND admins.is_active = true
+      AND (NOT EXISTS (
+        SELECT 1 FROM information_schema.columns
+        WHERE table_name = 'admins' AND column_name = 'is_active'
+      ) OR admins.is_active = true)
     )
   );
 
@@ -163,7 +178,10 @@ CREATE POLICY "Admins can update case comparison images"
       SELECT 1 FROM admins
       WHERE admins.id = auth.uid()
       AND admins.role IN ('super_admin', 'admin')
-      AND admins.is_active = true
+      AND (NOT EXISTS (
+        SELECT 1 FROM information_schema.columns
+        WHERE table_name = 'admins' AND column_name = 'is_active'
+      ) OR admins.is_active = true)
     )
   );
 
@@ -178,7 +196,10 @@ CREATE POLICY "Admins can delete case comparison images"
       SELECT 1 FROM admins
       WHERE admins.id = auth.uid()
       AND admins.role IN ('super_admin', 'admin')
-      AND admins.is_active = true
+      AND (NOT EXISTS (
+        SELECT 1 FROM information_schema.columns
+        WHERE table_name = 'admins' AND column_name = 'is_active'
+      ) OR admins.is_active = true)
     )
   );
 
