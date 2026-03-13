@@ -26,13 +26,38 @@ function LoginPage() {
         password,
       });
 
-      if (error) throw error;
+      if (error) {
+        if (error.message.includes('Invalid login credentials')) {
+          setError('登录失败：邮箱或密码错误，如果您还没有注册，请先注册账号');
+        } else if (error.message.includes('Email not confirmed')) {
+          setError('请先确认您的邮箱地址');
+        } else {
+          setError(error.message || t.loginPage.errorDefault);
+        }
+        throw error;
+      }
 
       if (data.user) {
+        const { data: profile, error: profileError } = await supabase
+          .from('profiles')
+          .select('id')
+          .eq('id', data.user.id)
+          .maybeSingle();
+
+        if (profileError) {
+          console.error('Profile check error:', profileError);
+        }
+
+        if (!profile) {
+          await supabase.auth.signOut();
+          setError('账户数据异常，请联系客服或重新注册');
+          return;
+        }
+
         navigate('/');
       }
     } catch (err: any) {
-      setError(err.message || t.loginPage.errorDefault);
+      console.error('Login error:', err);
     } finally {
       setLoading(false);
     }
