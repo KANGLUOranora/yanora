@@ -338,6 +338,56 @@ function BookingDesktop({
                   </div>
                 </div>
 
+                <div>
+                  <label className="block text-sm font-normal mb-3 tracking-wide" style={{color: '#1F1F1F'}}>
+                    咨询服务类型 <span style={{color: '#EF4444'}}>{t('booking.required')}</span>
+                  </label>
+                  <select
+                    name="service_type"
+                    value={formData.service_type}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-5 py-4 border text-sm tracking-wide transition focus:outline-none focus:border-gray-900 rounded-none"
+                    style={{borderColor: '#D1D5DB', color: '#1F1F1F'}}
+                  >
+                    <option value="面部轮廓">面部轮廓</option>
+                    <option value="注射提升">注射提升</option>
+                    <option value="身体雕塑">身体雕塑</option>
+                    <option value="植发">植发</option>
+                    <option value="牙科">牙科</option>
+                    <option value="其他">其他咨询</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-normal mb-3 tracking-wide" style={{color: '#1F1F1F'}}>
+                    预约日期 <span className="text-xs" style={{color: '#6B7280'}}>(可选)</span>
+                  </label>
+                  <input
+                    type="date"
+                    name="preferred_date"
+                    value={formData.preferred_date}
+                    onChange={handleChange}
+                    className="w-full px-5 py-4 border text-sm tracking-wide transition focus:outline-none focus:border-gray-900 rounded-none"
+                    style={{borderColor: '#D1D5DB', color: '#1F1F1F'}}
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-normal mb-3 tracking-wide" style={{color: '#1F1F1F'}}>
+                    备注信息 <span className="text-xs" style={{color: '#6B7280'}}>(可选)</span>
+                  </label>
+                  <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    rows={4}
+                    className="w-full px-5 py-4 border text-sm tracking-wide transition focus:outline-none focus:border-gray-900 rounded-none resize-none"
+                    style={{borderColor: '#D1D5DB', color: '#1F1F1F'}}
+                    placeholder="请告诉我们您的需求和期望..."
+                  />
+                </div>
+
                 <div className="pt-8">
                   <button
                     type="submit"

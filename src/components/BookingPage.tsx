@@ -104,7 +104,11 @@ function BookingPage() {
 
       const { error: updateError } = await supabase
         .from('bookings')
-        .update({ payment_status: 'paid' })
+        .update({
+          payment_status: 'paid',
+          payment_method: method,
+          payment_completed_at: new Date().toISOString()
+        })
         .eq('id', bookingId);
 
       if (updateError) throw updateError;
