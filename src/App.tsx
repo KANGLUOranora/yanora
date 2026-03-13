@@ -1453,47 +1453,33 @@ function App() {
                       </div>
                     </div>
 
-                    <div className="relative px-6 py-6 space-y-4" style={{backgroundColor: '#FAFBFC'}}>
-                      <div className="absolute top-0 left-0 w-1 h-full" style={{backgroundColor: '#B9CBDC'}}></div>
-
-                      <div className="pl-4">
-                        <div className="flex items-start gap-3 mb-2">
-                          <div className="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-white text-xs font-light" style={{backgroundColor: '#1C2B3A'}}>
-                            1
-                          </div>
-                          <p className="text-sm font-medium leading-tight flex-1" style={{color: '#1F2937'}}>
-                            {language === 'zh' ? caseItem.feature1_title_zh : caseItem.feature1_title_en}
-                          </p>
-                        </div>
-                        <p className="text-xs leading-relaxed pl-10" style={{color: '#6B7280'}}>
+                    <div className="px-6 py-6 space-y-6" style={{backgroundColor: '#FAFBFC'}}>
+                      <div className="text-center">
+                        <p className="text-sm font-medium mb-2 leading-tight" style={{color: '#1F2937'}}>
+                          {language === 'zh' ? caseItem.feature1_title_zh : caseItem.feature1_title_en}
+                        </p>
+                        <div className="w-12 h-px mx-auto mb-3" style={{backgroundColor: '#B9CBDC'}}></div>
+                        <p className="text-xs leading-relaxed" style={{color: '#6B7280'}}>
                           {language === 'zh' ? caseItem.feature1_desc_zh : caseItem.feature1_desc_en}
                         </p>
                       </div>
 
-                      <div className="pl-4">
-                        <div className="flex items-start gap-3 mb-2">
-                          <div className="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-white text-xs font-light" style={{backgroundColor: '#1C2B3A'}}>
-                            2
-                          </div>
-                          <p className="text-sm font-medium leading-tight flex-1" style={{color: '#1F2937'}}>
-                            {language === 'zh' ? caseItem.feature2_title_zh : caseItem.feature2_title_en}
-                          </p>
-                        </div>
-                        <p className="text-xs leading-relaxed pl-10" style={{color: '#6B7280'}}>
+                      <div className="text-center">
+                        <p className="text-sm font-medium mb-2 leading-tight" style={{color: '#1F2937'}}>
+                          {language === 'zh' ? caseItem.feature2_title_zh : caseItem.feature2_title_en}
+                        </p>
+                        <div className="w-12 h-px mx-auto mb-3" style={{backgroundColor: '#B9CBDC'}}></div>
+                        <p className="text-xs leading-relaxed" style={{color: '#6B7280'}}>
                           {language === 'zh' ? caseItem.feature2_desc_zh : caseItem.feature2_desc_en}
                         </p>
                       </div>
 
-                      <div className="pl-4">
-                        <div className="flex items-start gap-3 mb-2">
-                          <div className="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center text-white text-xs font-light" style={{backgroundColor: '#1C2B3A'}}>
-                            3
-                          </div>
-                          <p className="text-sm font-medium leading-tight flex-1" style={{color: '#1F2937'}}>
-                            {language === 'zh' ? caseItem.feature3_title_zh : caseItem.feature3_title_en}
-                          </p>
-                        </div>
-                        <p className="text-xs leading-relaxed pl-10" style={{color: '#6B7280'}}>
+                      <div className="text-center">
+                        <p className="text-sm font-medium mb-2 leading-tight" style={{color: '#1F2937'}}>
+                          {language === 'zh' ? caseItem.feature3_title_zh : caseItem.feature3_title_en}
+                        </p>
+                        <div className="w-12 h-px mx-auto mb-3" style={{backgroundColor: '#B9CBDC'}}></div>
+                        <p className="text-xs leading-relaxed" style={{color: '#6B7280'}}>
                           {language === 'zh' ? caseItem.feature3_desc_zh : caseItem.feature3_desc_en}
                         </p>
                       </div>
@@ -1535,48 +1521,33 @@ function App() {
                     </div>
 
                     {/* Features list */}
-                    <div className="p-5 space-y-4" style={{backgroundColor: '#FAFBFC'}}>
-                      <div className="relative pl-5">
-                        <div className="absolute left-0 top-0 bottom-0 w-0.5" style={{backgroundColor: '#B9CBDC'}}></div>
-                        <div className="flex items-start gap-3 mb-2">
-                          <div className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-white text-xs font-light" style={{backgroundColor: '#1C2B3A'}}>
-                            1
-                          </div>
-                          <h3 className="text-sm font-medium leading-tight flex-1" style={{color: '#1F1F1F'}}>
-                            {language === 'zh' ? caseItem.feature1_title_zh : caseItem.feature1_title_en}
-                          </h3>
-                        </div>
-                        <p className="text-xs leading-relaxed pl-9" style={{color: '#6B7280'}}>
+                    <div className="p-5 space-y-5" style={{backgroundColor: '#FAFBFC'}}>
+                      <div className="text-center">
+                        <h3 className="text-sm font-medium mb-2 leading-tight" style={{color: '#1F1F1F'}}>
+                          {language === 'zh' ? caseItem.feature1_title_zh : caseItem.feature1_title_en}
+                        </h3>
+                        <div className="w-10 h-px mx-auto mb-2" style={{backgroundColor: '#B9CBDC'}}></div>
+                        <p className="text-xs leading-relaxed" style={{color: '#6B7280'}}>
                           {language === 'zh' ? caseItem.feature1_desc_zh : caseItem.feature1_desc_en}
                         </p>
                       </div>
 
-                      <div className="relative pl-5">
-                        <div className="absolute left-0 top-0 bottom-0 w-0.5" style={{backgroundColor: '#B9CBDC'}}></div>
-                        <div className="flex items-start gap-3 mb-2">
-                          <div className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-white text-xs font-light" style={{backgroundColor: '#1C2B3A'}}>
-                            2
-                          </div>
-                          <h3 className="text-sm font-medium leading-tight flex-1" style={{color: '#1F1F1F'}}>
-                            {language === 'zh' ? caseItem.feature2_title_zh : caseItem.feature2_title_en}
-                          </h3>
-                        </div>
-                        <p className="text-xs leading-relaxed pl-9" style={{color: '#6B7280'}}>
+                      <div className="text-center">
+                        <h3 className="text-sm font-medium mb-2 leading-tight" style={{color: '#1F1F1F'}}>
+                          {language === 'zh' ? caseItem.feature2_title_zh : caseItem.feature2_title_en}
+                        </h3>
+                        <div className="w-10 h-px mx-auto mb-2" style={{backgroundColor: '#B9CBDC'}}></div>
+                        <p className="text-xs leading-relaxed" style={{color: '#6B7280'}}>
                           {language === 'zh' ? caseItem.feature2_desc_zh : caseItem.feature2_desc_en}
                         </p>
                       </div>
 
-                      <div className="relative pl-5">
-                        <div className="absolute left-0 top-0 bottom-0 w-0.5" style={{backgroundColor: '#B9CBDC'}}></div>
-                        <div className="flex items-start gap-3 mb-2">
-                          <div className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-white text-xs font-light" style={{backgroundColor: '#1C2B3A'}}>
-                            3
-                          </div>
-                          <h3 className="text-sm font-medium leading-tight flex-1" style={{color: '#1F1F1F'}}>
-                            {language === 'zh' ? caseItem.feature3_title_zh : caseItem.feature3_title_en}
-                          </h3>
-                        </div>
-                        <p className="text-xs leading-relaxed pl-9" style={{color: '#6B7280'}}>
+                      <div className="text-center">
+                        <h3 className="text-sm font-medium mb-2 leading-tight" style={{color: '#1F1F1F'}}>
+                          {language === 'zh' ? caseItem.feature3_title_zh : caseItem.feature3_title_en}
+                        </h3>
+                        <div className="w-10 h-px mx-auto mb-2" style={{backgroundColor: '#B9CBDC'}}></div>
+                        <p className="text-xs leading-relaxed" style={{color: '#6B7280'}}>
                           {language === 'zh' ? caseItem.feature3_desc_zh : caseItem.feature3_desc_en}
                         </p>
                       </div>
