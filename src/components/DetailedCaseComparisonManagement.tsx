@@ -108,13 +108,13 @@ export default function DetailedCaseComparisonManagement() {
       const filePath = `${fileName}`;
 
       const { error: uploadError } = await supabase.storage
-        .from('case-comparisons')
+        .from('case-images')
         .upload(filePath, file);
 
       if (uploadError) throw uploadError;
 
       const { data } = supabase.storage
-        .from('case-comparisons')
+        .from('case-images')
         .getPublicUrl(filePath);
 
       if (type === 'before') {
